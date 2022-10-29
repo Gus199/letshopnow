@@ -30,12 +30,12 @@ app.use('/api/orders', orderRoutes)
 // Serve Frontend 
 if(process.env.NODE_ENV === 'production') {
     // Set build folder as static
-    app.use(express.static(path.join(__dirname, '/frontend/build')))
+    app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-    app.get('*', (req, res) => res.sendFile(__dirname,  'frondend', 'build', 'index.html'))
+    app.get('*', (req, res) => res.sendFile(__dirname, '../', 'frondend', 'build', 'index.html'))
 } else {
     app.get('/', (req, res) => {
-        res.status(201).json({message:'Welcome to the Letshop API'})
+        res.status(201).json({message:'Welcome to the Inventory API'})
     })
 }
 
